@@ -36,6 +36,8 @@ typedef enum {
 
 @interface FlickrFetcher : NSObject
 
++ (NSURL *)URLforPlace:(id)flickrPlaceId;
+
 + (NSURL *)URLforTopPlaces;
 
 + (NSURL *)URLforPhotosInPlace:(id)flickrPlaceId maxResults:(int)maxResults;

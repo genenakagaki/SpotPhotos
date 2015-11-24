@@ -17,6 +17,10 @@
     return [NSURL URLWithString:query];
 }
 
++ (NSURL *)URLforPlace:(id)flickrPlaceId {
+    return [self URLForQuery:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.places.resolvePlaceId&place_id=%@", flickrPlaceId]];
+}
+
 + (NSURL *)URLforTopPlaces
 
 {
@@ -101,5 +105,6 @@
 {
     return [place valueForKeyPath:FLICKR_PLACE_REGION_NAME];
 }
+
 
 @end

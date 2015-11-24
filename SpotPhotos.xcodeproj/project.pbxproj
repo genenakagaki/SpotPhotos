@@ -25,6 +25,7 @@
 		CE87BAD91BFD477F0001CB0E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAD81BFD477F0001CB0E /* Photo.m */; };
 		CE87BADC1BFD47990001CB0E /* Spot.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BADB1BFD47990001CB0E /* Spot.m */; };
 		CE87BAE41BFD4D060001CB0E /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */; };
+		CE9C623F1C03E3BE00F03AE9 /* PhotoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C623E1C03E3BE00F03AE9 /* PhotoTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		CE87BAE11BFD4D060001CB0E /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrAPIKey.h; path = flickrFetcher/FlickrAPIKey.h; sourceTree = "<group>"; };
 		CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrFetcher.m; path = flickrFetcher/FlickrFetcher.m; sourceTree = "<group>"; };
 		CE87BAE31BFD4D060001CB0E /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrFetcher.h; path = flickrFetcher/FlickrFetcher.h; sourceTree = "<group>"; };
+		CE9C623D1C03E3BE00F03AE9 /* PhotoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoTableViewController.h; path = controller/PhotoTableViewController.h; sourceTree = "<group>"; };
+		CE9C623E1C03E3BE00F03AE9 /* PhotoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoTableViewController.m; path = controller/PhotoTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 			children = (
 				CE87BAD41BFD46A30001CB0E /* PlaceTableViewController.h */,
 				CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */,
+				CE9C623D1C03E3BE00F03AE9 /* PhotoTableViewController.h */,
+				CE9C623E1C03E3BE00F03AE9 /* PhotoTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				CE87BAD91BFD477F0001CB0E /* Photo.m in Sources */,
 				CE87BAA31BFD3E870001CB0E /* main.m in Sources */,
 				CE87BAD61BFD46A30001CB0E /* PlaceTableViewController.m in Sources */,
+				CE9C623F1C03E3BE00F03AE9 /* PhotoTableViewController.m in Sources */,
 				CE87BAE41BFD4D060001CB0E /* FlickrFetcher.m in Sources */,
 				CE87BAA71BFD3E870001CB0E /* SpotPhotosAppDelegate.m in Sources */,
 			);

@@ -6,18 +6,16 @@
 //  Copyright (c) 2015 Lehman College. All rights reserved.
 //
 
-#import "PlaceTableViewController.h"
+#import "PhotoTableViewController.h"
 
-@interface PlaceTableViewController ()
+@interface PhotoTableViewController ()
 
 @property (nonatomic) NSDictionary *places;
 @property (nonatomic) NSArray *countries;
 
-@property (nonatomic) NSDictionary *placesId;
-
 @end
 
-@implementation PlaceTableViewController
+@implementation PhotoTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,6 +31,7 @@
     [super viewDidLoad];
     
     NSURL *url = [FlickrFetcher URLforTopPlaces];
+//    NSURL *url = [FlickrFetcher URLforPhotosInPlace:111 maxResults:50];
     
     // create a new queue to do the fetching
     dispatch_queue_t fetchQ = dispatch_queue_create("flickr fetcher", NULL);
@@ -45,39 +44,26 @@
                                              options:0
                                              error:NULL];
         
-        NSLog(@"Flickr Result = %@", propertyListResults);
+        //        NSLog(@"Flickr Result = %@", propertyListResults);
         NSArray *results = [propertyListResults valueForKeyPath:FLICKR_RESULTS_PLACES];
         
         NSMutableDictionary *locations = [[NSMutableDictionary alloc] init];
-        NSMutableDictionary *placesId  = [[NSMutableDictionary alloc] init];
         
         for (NSDictionary *result in results) {
             NSString *location = [result valueForKey:@"_content"];
-            NSArray *content   = [[result valueForKey:@"_content"] componentsSeparatedByString:@", "];
-            NSString *country  = [content objectAtIndex:2];
+            NSArray *content = [[result valueForKey:@"_content"] componentsSeparatedByString:@", "];
+            NSString *country = [content objectAtIndex:2];
             
             NSMutableArray *locArr = [locations objectForKey:country];
             if (!locArr) {
                 locArr = [[NSMutableArray alloc] init];
             }
             [locArr addObject:location];
+            [locArr sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
             [locations setValue:locArr forKey:country];
-            
-            // store id of each location
-            NSString *placeId = [result valueForKey:@"place_id"];
-            [placesId setValue:placeId forKey:location];
         }
         
-        // sort countries alphabetically
         NSArray *countries = [[locations allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-        
-        // sort locations alphabetically for each country
-        for (NSString *country in countries) {
-            NSArray *locationArr = [locations valueForKey:country];
-            
-            locationArr = [locationArr sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-            [locations setValue:locationArr forKey:country];
-        }
         
         NSLog(@"%@", locations);
         
@@ -85,9 +71,8 @@
         // This needs to be done on the main thrread
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.refreshControl endRefreshing];
-            self.places    = locations;
+            self.places = locations;
             self.countries = countries;
-            self.placesId  = placesId;
             [self.tableView reloadData];
         });
     });
@@ -130,66 +115,63 @@ titleForHeaderInSection:(NSInteger)section
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"location cell"
-                                                            forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"location cell" forIndexPath:indexPath];
     
     NSString *sectionTitle = [self.countries objectAtIndex:indexPath.section];
     NSArray *sectionLocations = [self.places objectForKey:sectionTitle];
     NSString *location = [sectionLocations objectAtIndex:indexPath.row];
     cell.textLabel.text = location;
-    cell.detailTextLabel.text = location;
-    NSLog(@"%@", [self.placesId objectForKey:location]);
     
     return cell;
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
