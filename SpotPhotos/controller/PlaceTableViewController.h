@@ -1,5 +1,5 @@
 //
-//  SpotPhotosViewController.h
+//  PhotoTableViewController.h
 //  SpotPhotos
 //
 //  Created by User on 11/18/15.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlickrFetcher.h"
 
-@interface SpotPhotosViewController : UIViewController
+@interface PlaceTableViewController : UITableViewController
 
 @end

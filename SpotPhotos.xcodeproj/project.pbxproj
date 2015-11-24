@@ -21,7 +21,10 @@
 		CE87BABB1BFD3E870001CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BA9A1BFD3E870001CB0E /* UIKit.framework */; };
 		CE87BAC31BFD3E870001CB0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE87BAC11BFD3E870001CB0E /* InfoPlist.strings */; };
 		CE87BAC51BFD3E870001CB0E /* SpotPhotosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAC41BFD3E870001CB0E /* SpotPhotosTests.m */; };
-		CE87BAD31BFD3F310001CB0E /* SpotPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAD21BFD3F310001CB0E /* SpotPhotosViewController.m */; };
+		CE87BAD61BFD46A30001CB0E /* PlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */; };
+		CE87BAD91BFD477F0001CB0E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAD81BFD477F0001CB0E /* Photo.m */; };
+		CE87BADC1BFD47990001CB0E /* Spot.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BADB1BFD47990001CB0E /* Spot.m */; };
+		CE87BAE41BFD4D060001CB0E /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +56,15 @@
 		CE87BAC01BFD3E870001CB0E /* SpotPhotosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpotPhotosTests-Info.plist"; sourceTree = "<group>"; };
 		CE87BAC21BFD3E870001CB0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE87BAC41BFD3E870001CB0E /* SpotPhotosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotPhotosTests.m; sourceTree = "<group>"; };
-		CE87BAD11BFD3F310001CB0E /* SpotPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotPhotosViewController.h; path = controller/SpotPhotosViewController.h; sourceTree = "<group>"; };
-		CE87BAD21BFD3F310001CB0E /* SpotPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotPhotosViewController.m; path = controller/SpotPhotosViewController.m; sourceTree = "<group>"; };
+		CE87BAD41BFD46A30001CB0E /* PlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaceTableViewController.h; path = controller/PlaceTableViewController.h; sourceTree = "<group>"; };
+		CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceTableViewController.m; path = controller/PlaceTableViewController.m; sourceTree = "<group>"; };
+		CE87BAD71BFD477F0001CB0E /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = model/Photo.h; sourceTree = "<group>"; };
+		CE87BAD81BFD477F0001CB0E /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = model/Photo.m; sourceTree = "<group>"; };
+		CE87BADA1BFD47990001CB0E /* Spot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Spot.h; path = model/Spot.h; sourceTree = "<group>"; };
+		CE87BADB1BFD47990001CB0E /* Spot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Spot.m; path = model/Spot.m; sourceTree = "<group>"; };
+		CE87BAE11BFD4D060001CB0E /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrAPIKey.h; path = flickrFetcher/FlickrAPIKey.h; sourceTree = "<group>"; };
+		CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrFetcher.m; path = flickrFetcher/FlickrFetcher.m; sourceTree = "<group>"; };
+		CE87BAE31BFD4D060001CB0E /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrFetcher.h; path = flickrFetcher/FlickrFetcher.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,13 +124,14 @@
 		CE87BA9C1BFD3E870001CB0E /* SpotPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				CE87BAAB1BFD3E870001CB0E /* Main_iPad.storyboard */,
+				CE87BAA81BFD3E870001CB0E /* Main_iPhone.storyboard */,
 				CE87BACE1BFD3ECA0001CB0E /* Model */,
 				CE87BACF1BFD3ED10001CB0E /* View */,
 				CE87BAD01BFD3EDA0001CB0E /* Controller */,
+				CE87BAE51BFD4D0A0001CB0E /* FlickrFetcher */,
 				CE87BAA51BFD3E870001CB0E /* SpotPhotosAppDelegate.h */,
 				CE87BAA61BFD3E870001CB0E /* SpotPhotosAppDelegate.m */,
-				CE87BAA81BFD3E870001CB0E /* Main_iPhone.storyboard */,
-				CE87BAAB1BFD3E870001CB0E /* Main_iPad.storyboard */,
 				CE87BAB11BFD3E870001CB0E /* Images.xcassets */,
 				CE87BA9D1BFD3E870001CB0E /* Supporting Files */,
 			);
@@ -159,6 +170,10 @@
 		CE87BACE1BFD3ECA0001CB0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE87BAD71BFD477F0001CB0E /* Photo.h */,
+				CE87BAD81BFD477F0001CB0E /* Photo.m */,
+				CE87BADA1BFD47990001CB0E /* Spot.h */,
+				CE87BADB1BFD47990001CB0E /* Spot.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -173,10 +188,20 @@
 		CE87BAD01BFD3EDA0001CB0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CE87BAD11BFD3F310001CB0E /* SpotPhotosViewController.h */,
-				CE87BAD21BFD3F310001CB0E /* SpotPhotosViewController.m */,
+				CE87BAD41BFD46A30001CB0E /* PlaceTableViewController.h */,
+				CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		CE87BAE51BFD4D0A0001CB0E /* FlickrFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				CE87BAE11BFD4D060001CB0E /* FlickrAPIKey.h */,
+				CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */,
+				CE87BAE31BFD4D060001CB0E /* FlickrFetcher.h */,
+			);
+			name = FlickrFetcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,8 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE87BADC1BFD47990001CB0E /* Spot.m in Sources */,
+				CE87BAD91BFD477F0001CB0E /* Photo.m in Sources */,
 				CE87BAA31BFD3E870001CB0E /* main.m in Sources */,
-				CE87BAD31BFD3F310001CB0E /* SpotPhotosViewController.m in Sources */,
+				CE87BAD61BFD46A30001CB0E /* PlaceTableViewController.m in Sources */,
+				CE87BAE41BFD4D060001CB0E /* FlickrFetcher.m in Sources */,
 				CE87BAA71BFD3E870001CB0E /* SpotPhotosAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +523,7 @@
 				CE87BACA1BFD3E870001CB0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE87BACB1BFD3E870001CB0E /* Build configuration list for PBXNativeTarget "SpotPhotosTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +532,7 @@
 				CE87BACD1BFD3E870001CB0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
