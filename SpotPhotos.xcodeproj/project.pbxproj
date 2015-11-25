@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0935F61C06392E00B85C91 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0935F41C06392D00B85C91 /* ImageViewController.m */; };
+		CE0935F91C065FF100B85C91 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0935F81C065FF100B85C91 /* Place.m */; };
+		CE0936051C06693000B85C91 /* PlacePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0936041C06693000B85C91 /* PlacePhotoViewController.m */; };
+		CE09360B1C066A6300B85C91 /* RecentPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE09360A1C066A6300B85C91 /* RecentPhotoViewController.m */; };
 		CE87BA971BFD3E870001CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BA961BFD3E870001CB0E /* Foundation.framework */; };
 		CE87BA991BFD3E870001CB0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BA981BFD3E870001CB0E /* CoreGraphics.framework */; };
 		CE87BA9B1BFD3E870001CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BA9A1BFD3E870001CB0E /* UIKit.framework */; };
@@ -23,7 +27,6 @@
 		CE87BAC51BFD3E870001CB0E /* SpotPhotosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAC41BFD3E870001CB0E /* SpotPhotosTests.m */; };
 		CE87BAD61BFD46A30001CB0E /* PlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */; };
 		CE87BAD91BFD477F0001CB0E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAD81BFD477F0001CB0E /* Photo.m */; };
-		CE87BADC1BFD47990001CB0E /* Spot.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BADB1BFD47990001CB0E /* Spot.m */; };
 		CE87BAE41BFD4D060001CB0E /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */; };
 		CE9C623F1C03E3BE00F03AE9 /* PhotoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C623E1C03E3BE00F03AE9 /* PhotoTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -39,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0935F41C06392D00B85C91 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = controller/ImageViewController.m; sourceTree = "<group>"; };
+		CE0935F51C06392D00B85C91 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = controller/ImageViewController.h; sourceTree = "<group>"; };
+		CE0935F71C065FF100B85C91 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Place.h; path = model/Place.h; sourceTree = "<group>"; };
+		CE0935F81C065FF100B85C91 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Place.m; path = model/Place.m; sourceTree = "<group>"; };
+		CE0936031C06693000B85C91 /* PlacePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlacePhotoViewController.h; path = controller/PlacePhotoViewController.h; sourceTree = "<group>"; };
+		CE0936041C06693000B85C91 /* PlacePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlacePhotoViewController.m; path = controller/PlacePhotoViewController.m; sourceTree = "<group>"; };
+		CE0936091C066A6300B85C91 /* RecentPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecentPhotoViewController.h; path = controller/RecentPhotoViewController.h; sourceTree = "<group>"; };
+		CE09360A1C066A6300B85C91 /* RecentPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecentPhotoViewController.m; path = controller/RecentPhotoViewController.m; sourceTree = "<group>"; };
 		CE87BA931BFD3E870001CB0E /* SpotPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE87BA961BFD3E870001CB0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE87BA981BFD3E870001CB0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,8 +72,6 @@
 		CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceTableViewController.m; path = controller/PlaceTableViewController.m; sourceTree = "<group>"; };
 		CE87BAD71BFD477F0001CB0E /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = model/Photo.h; sourceTree = "<group>"; };
 		CE87BAD81BFD477F0001CB0E /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = model/Photo.m; sourceTree = "<group>"; };
-		CE87BADA1BFD47990001CB0E /* Spot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Spot.h; path = model/Spot.h; sourceTree = "<group>"; };
-		CE87BADB1BFD47990001CB0E /* Spot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Spot.m; path = model/Spot.m; sourceTree = "<group>"; };
 		CE87BAE11BFD4D060001CB0E /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrAPIKey.h; path = flickrFetcher/FlickrAPIKey.h; sourceTree = "<group>"; };
 		CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrFetcher.m; path = flickrFetcher/FlickrFetcher.m; sourceTree = "<group>"; };
 		CE87BAE31BFD4D060001CB0E /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrFetcher.h; path = flickrFetcher/FlickrFetcher.h; sourceTree = "<group>"; };
@@ -175,8 +184,8 @@
 			children = (
 				CE87BAD71BFD477F0001CB0E /* Photo.h */,
 				CE87BAD81BFD477F0001CB0E /* Photo.m */,
-				CE87BADA1BFD47990001CB0E /* Spot.h */,
-				CE87BADB1BFD47990001CB0E /* Spot.m */,
+				CE0935F71C065FF100B85C91 /* Place.h */,
+				CE0935F81C065FF100B85C91 /* Place.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -191,10 +200,16 @@
 		CE87BAD01BFD3EDA0001CB0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CE0935F41C06392D00B85C91 /* ImageViewController.m */,
+				CE0935F51C06392D00B85C91 /* ImageViewController.h */,
 				CE87BAD41BFD46A30001CB0E /* PlaceTableViewController.h */,
 				CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */,
 				CE9C623D1C03E3BE00F03AE9 /* PhotoTableViewController.h */,
 				CE9C623E1C03E3BE00F03AE9 /* PhotoTableViewController.m */,
+				CE0936031C06693000B85C91 /* PlacePhotoViewController.h */,
+				CE0936041C06693000B85C91 /* PlacePhotoViewController.m */,
+				CE0936091C066A6300B85C91 /* RecentPhotoViewController.h */,
+				CE09360A1C066A6300B85C91 /* RecentPhotoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -308,13 +323,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE87BADC1BFD47990001CB0E /* Spot.m in Sources */,
 				CE87BAD91BFD477F0001CB0E /* Photo.m in Sources */,
+				CE0935F61C06392E00B85C91 /* ImageViewController.m in Sources */,
 				CE87BAA31BFD3E870001CB0E /* main.m in Sources */,
 				CE87BAD61BFD46A30001CB0E /* PlaceTableViewController.m in Sources */,
 				CE9C623F1C03E3BE00F03AE9 /* PhotoTableViewController.m in Sources */,
 				CE87BAE41BFD4D060001CB0E /* FlickrFetcher.m in Sources */,
+				CE0936051C06693000B85C91 /* PlacePhotoViewController.m in Sources */,
 				CE87BAA71BFD3E870001CB0E /* SpotPhotosAppDelegate.m in Sources */,
+				CE09360B1C066A6300B85C91 /* RecentPhotoViewController.m in Sources */,
+				CE0935F91C065FF100B85C91 /* Place.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

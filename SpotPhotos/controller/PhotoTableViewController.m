@@ -10,12 +10,13 @@
 
 @interface PhotoTableViewController ()
 
-@property (nonatomic) NSDictionary *places;
-@property (nonatomic) NSArray *countries;
-
 @end
 
 @implementation PhotoTableViewController
+
+- (void)setPhotos:(NSArray *)photos {
+    _photos = photos;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,53 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSURL *url = [FlickrFetcher URLforTopPlaces];
-//    NSURL *url = [FlickrFetcher URLforPhotosInPlace:111 maxResults:50];
-    
-    // create a new queue to do the fetching
-    dispatch_queue_t fetchQ = dispatch_queue_create("flickr fetcher", NULL);
-    
-    // dispatch the fetch on this queue
-    dispatch_async(fetchQ, ^{
-        NSData *jsonResults = [NSData dataWithContentsOfURL:url];
-        NSDictionary *propertyListResults = [NSJSONSerialization
-                                             JSONObjectWithData:jsonResults
-                                             options:0
-                                             error:NULL];
-        
-        //        NSLog(@"Flickr Result = %@", propertyListResults);
-        NSArray *results = [propertyListResults valueForKeyPath:FLICKR_RESULTS_PLACES];
-        
-        NSMutableDictionary *locations = [[NSMutableDictionary alloc] init];
-        
-        for (NSDictionary *result in results) {
-            NSString *location = [result valueForKey:@"_content"];
-            NSArray *content = [[result valueForKey:@"_content"] componentsSeparatedByString:@", "];
-            NSString *country = [content objectAtIndex:2];
-            
-            NSMutableArray *locArr = [locations objectForKey:country];
-            if (!locArr) {
-                locArr = [[NSMutableArray alloc] init];
-            }
-            [locArr addObject:location];
-            [locArr sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-            [locations setValue:locArr forKey:country];
-        }
-        
-        NSArray *countries = [[locations allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-        
-        NSLog(@"%@", locations);
-        
-        
-        // This needs to be done on the main thrread
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.refreshControl endRefreshing];
-            self.places = locations;
-            self.countries = countries;
-            [self.tableView reloadData];
-        });
-    });
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -95,34 +49,59 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.countries count];
-}
-
-- (NSString *)tableView:(UITableView *)tableView
-titleForHeaderInSection:(NSInteger)section
-{
-    return [self.countries objectAtIndex:section];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    NSString *sectionTitle = [self.countries objectAtIndex:section];
-    NSArray * sectionLocations = [self.places objectForKey:sectionTitle];
-    return [sectionLocations count];
+    return [self.photos count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"location cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Photo Cell" forIndexPath:indexPath];
     
-    NSString *sectionTitle = [self.countries objectAtIndex:indexPath.section];
-    NSArray *sectionLocations = [self.places objectForKey:sectionTitle];
-    NSString *location = [sectionLocations objectAtIndex:indexPath.row];
-    cell.textLabel.text = location;
+    NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
+    cell.textLabel.text       = [photo objectForKey:@"title"];
+    cell.detailTextLabel.text = [[photo objectForKey:@"description"] objectForKey:@"_content"];
     
     return cell;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
+    if ([segue.identifier isEqualToString:@"Display Photo"]) {
+        ImageViewController *vc = segue.destinationViewController;
+        
+        NSDictionary *photo = self.photos[indexPath.row];
+        
+        [self prepareImageViewController:vc toDisplayPhoto:photo];
+    }
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id detail = self.splitViewController.viewControllers[1];
+    
+    if ([detail isKindOfClass:[UINavigationController class]]) {
+        detail = [((UINavigationController *)detail).viewControllers firstObject];
+    }
+    
+    if ([detail isKindOfClass:[ImageViewController class]]) {
+        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+    }
+}
+
+- (void)prepareImageViewController:(ImageViewController *)vc toDisplayPhoto:(NSDictionary *)photo {
+    vc.imageURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
+    vc.title = [photo valueForKey:FLICKR_PHOTO_TITLE];
 }
 
 /*
@@ -163,15 +142,6 @@ titleForHeaderInSection:(NSInteger)section
  }
  */
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 @end

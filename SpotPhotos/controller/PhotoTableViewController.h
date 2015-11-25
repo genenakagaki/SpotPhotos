@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "FlickrFetcher.h"
+#import "ImageViewController.h"
 
 @interface PhotoTableViewController : UITableViewController
+
+@property (nonatomic) NSArray *photos;
 
 @end

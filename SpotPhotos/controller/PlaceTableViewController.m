@@ -13,8 +13,6 @@
 @property (nonatomic) NSDictionary *places;
 @property (nonatomic) NSArray *countries;
 
-@property (nonatomic) NSDictionary *placesId;
-
 @end
 
 @implementation PlaceTableViewController
@@ -45,49 +43,63 @@
                                              options:0
                                              error:NULL];
         
-        NSLog(@"Flickr Result = %@", propertyListResults);
+//        NSLog(@"Flickr Result = %@", propertyListResults);
         NSArray *results = [propertyListResults valueForKeyPath:FLICKR_RESULTS_PLACES];
         
-        NSMutableDictionary *locations = [[NSMutableDictionary alloc] init];
-        NSMutableDictionary *placesId  = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *places = [[NSMutableDictionary alloc] init];
+//        places = @{
+//            @"<countryName>" = @{
+//                    @"city"     = @"<city>",
+//                    @"province" = @"<province>",
+//                    @"placeId"  = @"<placeId>"
+//                }
+//        };
         
         for (NSDictionary *result in results) {
-            NSString *location = [result valueForKey:@"_content"];
-            NSArray *content   = [[result valueForKey:@"_content"] componentsSeparatedByString:@", "];
-            NSString *country  = [content objectAtIndex:2];
+            // _content format: "city, province, county"
+            NSString *content   = [result valueForKey:@"_content"];
+            NSArray *contentArr = [content componentsSeparatedByString:@", "];
             
-            NSMutableArray *locArr = [locations objectForKey:country];
-            if (!locArr) {
-                locArr = [[NSMutableArray alloc] init];
+            NSString *country   = [contentArr lastObject];
+            
+            NSMutableDictionary *place = [places objectForKey:country];
+            if (!place) {
+                place = [[NSMutableDictionary alloc] init];
             }
-            [locArr addObject:location];
-            [locations setValue:locArr forKey:country];
+//            place = @{
+//                @"city"     = @"<cityName>",
+//                @"province" = @"<provinceName>",
+//                @"placeId"  = @"<placeId>"
+//            };
             
-            // store id of each location
+            NSString *city = [contentArr objectAtIndex:0];
+            [place setValue:city forKey:@"city"];
+    
+            NSString *province = [contentArr objectAtIndex:1];
+            if ([province isEqualToString:country]) {
+                [place setValue:@"" forKey:@"province"];
+            }
+            else {
+                [place setValue:province forKey:@"province"];
+            }
+            
             NSString *placeId = [result valueForKey:@"place_id"];
-            [placesId setValue:placeId forKey:location];
+            [place setValue:placeId forKey:@"placeId"];
+            
+            [places setValue:place forKey:country];
         }
         
         // sort countries alphabetically
-        NSArray *countries = [[locations allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        NSArray *countries = [[places allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
         
-        // sort locations alphabetically for each country
-        for (NSString *country in countries) {
-            NSArray *locationArr = [locations valueForKey:country];
-            
-            locationArr = [locationArr sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-            [locations setValue:locationArr forKey:country];
-        }
-        
-        NSLog(@"%@", locations);
+//        NSLog(@"%@", locations);
         
         
         // This needs to be done on the main thrread
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.refreshControl endRefreshing];
-            self.places    = locations;
+            self.places    = places;
             self.countries = countries;
-            self.placesId  = placesId;
             [self.tableView reloadData];
         });
     });
@@ -130,17 +142,35 @@ titleForHeaderInSection:(NSInteger)section
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"location cell"
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Place Cell"
                                                             forIndexPath:indexPath];
     
     NSString *sectionTitle = [self.countries objectAtIndex:indexPath.section];
-    NSArray *sectionLocations = [self.places objectForKey:sectionTitle];
-    NSString *location = [sectionLocations objectAtIndex:indexPath.row];
-    cell.textLabel.text = location;
-    cell.detailTextLabel.text = location;
-    NSLog(@"%@", [self.placesId objectForKey:location]);
+    NSDictionary *place  = [self.places objectForKey:sectionTitle];
+    
+    cell.textLabel.text       = [place objectForKey:@"city"];
+    cell.detailTextLabel.text = [place objectForKey:@"province"];
     
     return cell;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        if ([segue.identifier isEqualToString:@"Display Photo Table"]) {
+            // get the place dictionary
+            NSString *sectionTitle = [self.countries objectAtIndex:indexPath.section];
+            NSDictionary *place = [self.places objectForKey:sectionTitle];
+            
+            PlacePhotoViewController *vc = segue.destinationViewController;
+
+            NSLog(@"%@", [place objectForKey:@"placeId"]);
+            vc.placeId = [place objectForKey:@"placeId"];
+        }
+    }
 }
 
 /*
@@ -181,15 +211,6 @@ titleForHeaderInSection:(NSInteger)section
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
