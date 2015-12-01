@@ -62,10 +62,12 @@
             
             NSString *country   = [contentArr lastObject];
             
-            NSMutableDictionary *place = [places objectForKey:country];
-            if (!place) {
-                place = [[NSMutableDictionary alloc] init];
+            NSMutableArray *countryPlaces = [places objectForKey:country];
+            if (!countryPlaces) {
+                countryPlaces = [[NSMutableArray alloc] init];
             }
+            
+            NSMutableDictionary *place = [[NSMutableDictionary alloc] init];
 //            place = @{
 //                @"city"     = @"<cityName>",
 //                @"province" = @"<provinceName>",
@@ -86,7 +88,9 @@
             NSString *placeId = [result valueForKey:@"place_id"];
             [place setValue:placeId forKey:@"placeId"];
             
-            [places setValue:place forKey:country];
+            [countryPlaces addObject:place];
+            
+            [places setValue:countryPlaces forKey:country];
         }
         
         // sort countries alphabetically
@@ -146,7 +150,8 @@ titleForHeaderInSection:(NSInteger)section
                                                             forIndexPath:indexPath];
     
     NSString *sectionTitle = [self.countries objectAtIndex:indexPath.section];
-    NSDictionary *place  = [self.places objectForKey:sectionTitle];
+    NSArray *countryPlaces = [self.places objectForKey:sectionTitle];
+    NSDictionary *place    = [countryPlaces objectAtIndex:indexPath.row];
     
     cell.textLabel.text       = [place objectForKey:@"city"];
     cell.detailTextLabel.text = [place objectForKey:@"province"];
@@ -163,10 +168,11 @@ titleForHeaderInSection:(NSInteger)section
         if ([segue.identifier isEqualToString:@"Display Photo Table"]) {
             // get the place dictionary
             NSString *sectionTitle = [self.countries objectAtIndex:indexPath.section];
-            NSDictionary *place = [self.places objectForKey:sectionTitle];
+            NSArray *countryPlaces = [self.places objectForKey:sectionTitle];
+            NSDictionary *place    = [countryPlaces objectAtIndex:indexPath.row];
             
             PlacePhotoViewController *vc = segue.destinationViewController;
-
+            
             NSLog(@"%@", [place objectForKey:@"placeId"]);
             vc.placeId = [place objectForKey:@"placeId"];
         }

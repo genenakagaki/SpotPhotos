@@ -67,29 +67,7 @@
 {
     [super prepareForSegue:segue sender:sender];
     
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     
-    if ([segue.identifier isEqualToString:@"Display Photo"]) {
-        
-        NSDictionary *photo = self.photos[indexPath.row];
-        // store in nsuserdefaults
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSArray *recentPhotos = [userDefaults objectForKey:@"recentPhotos"];
-        
-        NSMutableArray *newRecentPhotos;
-        if (!recentPhotos) {
-            newRecentPhotos = [[NSMutableArray alloc] init];
-        }
-        else {
-            newRecentPhotos = [recentPhotos mutableCopy];
-        }
-        
-        [newRecentPhotos insertObject:photo atIndex:0];
-        if ([newRecentPhotos count] > 50) {
-            [newRecentPhotos removeLastObject];
-        }
-        [userDefaults setObject:newRecentPhotos forKey:@"recentPhotos"];
-    }
 }
 
 @end

@@ -64,7 +64,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Photo Cell" forIndexPath:indexPath];
     
     NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
-    cell.textLabel.text       = [photo objectForKey:@"title"];
+    
+    cell.textLabel.text = [photo objectForKey:@"title"];
+    if ([cell.textLabel.text length] == 0) {
+        cell.textLabel.text = [[photo objectForKey:@"description"] objectForKey:@"_content"];
+        
+        if (cell.textLabel.text.length == 0) {
+            cell.textLabel.text = @"Unknown";
+        }
+    }
+    
     cell.detailTextLabel.text = [[photo objectForKey:@"description"] objectForKey:@"_content"];
     
     return cell;
@@ -81,6 +90,8 @@
         NSDictionary *photo = self.photos[indexPath.row];
         
         [self prepareImageViewController:vc toDisplayPhoto:photo];
+        
+        [self savePhotoToRecent:sender];
     }
 }
 
@@ -102,6 +113,47 @@
 - (void)prepareImageViewController:(ImageViewController *)vc toDisplayPhoto:(NSDictionary *)photo {
     vc.imageURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
     vc.title = [photo valueForKey:FLICKR_PHOTO_TITLE];
+}
+
+- (void)savePhotoToRecent:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    
+    NSDictionary *photo = self.photos[indexPath.row];
+    
+    // store in nsuserdefaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *recentPhotos = [userDefaults objectForKey:@"recentPhotos"];
+    
+    NSMutableArray *newRecentPhotos;
+    if (!recentPhotos) {
+        newRecentPhotos = [[NSMutableArray alloc] init];
+    }
+    else {
+        newRecentPhotos = [recentPhotos mutableCopy];
+    }
+    
+    // check for duplicates
+    int duplicateIndex = -1;
+    for (int i = 0; i < [recentPhotos count]; i++) {
+        NSDictionary *recentPhoto = [recentPhotos objectAtIndex:i];
+        
+        if ([recentPhoto isEqualToDictionary:photo]) {
+            duplicateIndex = i;
+            break;
+        }
+    }
+    
+    if (duplicateIndex != -1) {
+        [newRecentPhotos removeObjectAtIndex:duplicateIndex];
+    }
+    
+    [newRecentPhotos insertObject:photo atIndex:0];
+    
+    if ([newRecentPhotos count] > 20) {
+        [newRecentPhotos removeLastObject];
+    }
+    
+    [userDefaults setObject:newRecentPhotos forKey:@"recentPhotos"];
 }
 
 /*

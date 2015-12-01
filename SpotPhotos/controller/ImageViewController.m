@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end
 
 @implementation ImageViewController
