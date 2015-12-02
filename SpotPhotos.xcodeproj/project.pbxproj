@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE0935F61C06392E00B85C91 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0935F41C06392D00B85C91 /* ImageViewController.m */; };
+		CE0935F91C065FF100B85C91 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0935F81C065FF100B85C91 /* Place.m */; };
+		CE0936051C06693000B85C91 /* PlacePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0936041C06693000B85C91 /* PlacePhotoViewController.m */; };
+		CE09360B1C066A6300B85C91 /* RecentPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE09360A1C066A6300B85C91 /* RecentPhotoViewController.m */; };
+		CE87BA971BFD3E870001CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BA961BFD3E870001CB0E /* Foundation.framework */; };
+		CE87BA991BFD3E870001CB0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BA981BFD3E870001CB0E /* CoreGraphics.framework */; };
+		CE87BA9B1BFD3E870001CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BA9A1BFD3E870001CB0E /* UIKit.framework */; };
+		CE87BAA11BFD3E870001CB0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE87BA9F1BFD3E870001CB0E /* InfoPlist.strings */; };
+		CE87BAA31BFD3E870001CB0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAA21BFD3E870001CB0E /* main.m */; };
+		CE87BAA71BFD3E870001CB0E /* SpotPhotosAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAA61BFD3E870001CB0E /* SpotPhotosAppDelegate.m */; };
+		CE87BAAA1BFD3E870001CB0E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE87BAA81BFD3E870001CB0E /* Main_iPhone.storyboard */; };
+		CE87BAAD1BFD3E870001CB0E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE87BAAB1BFD3E870001CB0E /* Main_iPad.storyboard */; };
+		CE87BAB21BFD3E870001CB0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE87BAB11BFD3E870001CB0E /* Images.xcassets */; };
+		CE87BAB91BFD3E870001CB0E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BAB81BFD3E870001CB0E /* XCTest.framework */; };
+		CE87BABA1BFD3E870001CB0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BA961BFD3E870001CB0E /* Foundation.framework */; };
+		CE87BABB1BFD3E870001CB0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE87BA9A1BFD3E870001CB0E /* UIKit.framework */; };
+		CE87BAC31BFD3E870001CB0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE87BAC11BFD3E870001CB0E /* InfoPlist.strings */; };
+		CE87BAC51BFD3E870001CB0E /* SpotPhotosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAC41BFD3E870001CB0E /* SpotPhotosTests.m */; };
+		CE87BAD61BFD46A30001CB0E /* PlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */; };
+		CE87BAD91BFD477F0001CB0E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAD81BFD477F0001CB0E /* Photo.m */; };
+		CE87BAE41BFD4D060001CB0E /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */; };
+		CE9C623F1C03E3BE00F03AE9 /* PhotoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C623E1C03E3BE00F03AE9 /* PhotoTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE87BABC1BFD3E870001CB0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE87BA8B1BFD3E870001CB0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE87BA921BFD3E870001CB0E;
+			remoteInfo = SpotPhotos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CE0935F41C06392D00B85C91 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = controller/ImageViewController.m; sourceTree = "<group>"; };
+		CE0935F51C06392D00B85C91 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = controller/ImageViewController.h; sourceTree = "<group>"; };
+		CE0935F71C065FF100B85C91 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Place.h; path = model/Place.h; sourceTree = "<group>"; };
+		CE0935F81C065FF100B85C91 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Place.m; path = model/Place.m; sourceTree = "<group>"; };
+		CE0936031C06693000B85C91 /* PlacePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlacePhotoViewController.h; path = controller/PlacePhotoViewController.h; sourceTree = "<group>"; };
+		CE0936041C06693000B85C91 /* PlacePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlacePhotoViewController.m; path = controller/PlacePhotoViewController.m; sourceTree = "<group>"; };
+		CE0936091C066A6300B85C91 /* RecentPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecentPhotoViewController.h; path = controller/RecentPhotoViewController.h; sourceTree = "<group>"; };
+		CE09360A1C066A6300B85C91 /* RecentPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecentPhotoViewController.m; path = controller/RecentPhotoViewController.m; sourceTree = "<group>"; };
+		CE87BA931BFD3E870001CB0E /* SpotPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE87BA961BFD3E870001CB0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE87BA981BFD3E870001CB0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE87BA9A1BFD3E870001CB0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE87BA9E1BFD3E870001CB0E /* SpotPhotos-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpotPhotos-Info.plist"; sourceTree = "<group>"; };
+		CE87BAA01BFD3E870001CB0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE87BAA21BFD3E870001CB0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE87BAA41BFD3E870001CB0E /* SpotPhotos-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotPhotos-Prefix.pch"; sourceTree = "<group>"; };
+		CE87BAA51BFD3E870001CB0E /* SpotPhotosAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotPhotosAppDelegate.h; sourceTree = "<group>"; };
+		CE87BAA61BFD3E870001CB0E /* SpotPhotosAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotPhotosAppDelegate.m; sourceTree = "<group>"; };
+		CE87BAA91BFD3E870001CB0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		CE87BAAC1BFD3E870001CB0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		CE87BAB11BFD3E870001CB0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CE87BAB71BFD3E870001CB0E /* SpotPhotosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotPhotosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE87BAB81BFD3E870001CB0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CE87BAC01BFD3E870001CB0E /* SpotPhotosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpotPhotosTests-Info.plist"; sourceTree = "<group>"; };
+		CE87BAC21BFD3E870001CB0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE87BAC41BFD3E870001CB0E /* SpotPhotosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotPhotosTests.m; sourceTree = "<group>"; };
+		CE87BAD41BFD46A30001CB0E /* PlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaceTableViewController.h; path = controller/PlaceTableViewController.h; sourceTree = "<group>"; };
+		CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceTableViewController.m; path = controller/PlaceTableViewController.m; sourceTree = "<group>"; };
+		CE87BAD71BFD477F0001CB0E /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = model/Photo.h; sourceTree = "<group>"; };
+		CE87BAD81BFD477F0001CB0E /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = model/Photo.m; sourceTree = "<group>"; };
+		CE87BAE11BFD4D060001CB0E /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrAPIKey.h; path = flickrFetcher/FlickrAPIKey.h; sourceTree = "<group>"; };
+		CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrFetcher.m; path = flickrFetcher/FlickrFetcher.m; sourceTree = "<group>"; };
+		CE87BAE31BFD4D060001CB0E /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrFetcher.h; path = flickrFetcher/FlickrFetcher.h; sourceTree = "<group>"; };
+		CE9C623D1C03E3BE00F03AE9 /* PhotoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoTableViewController.h; path = controller/PhotoTableViewController.h; sourceTree = "<group>"; };
+		CE9C623E1C03E3BE00F03AE9 /* PhotoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoTableViewController.m; path = controller/PhotoTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE87BA901BFD3E870001CB0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE87BA991BFD3E870001CB0E /* CoreGraphics.framework in Frameworks */,
+				CE87BA9B1BFD3E870001CB0E /* UIKit.framework in Frameworks */,
+				CE87BA971BFD3E870001CB0E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE87BAB41BFD3E870001CB0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE87BAB91BFD3E870001CB0E /* XCTest.framework in Frameworks */,
+				CE87BABB1BFD3E870001CB0E /* UIKit.framework in Frameworks */,
+				CE87BABA1BFD3E870001CB0E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE87BA8A1BFD3E870001CB0E = {
+			isa = PBXGroup;
+			children = (
+				CE87BA9C1BFD3E870001CB0E /* SpotPhotos */,
+				CE87BABE1BFD3E870001CB0E /* SpotPhotosTests */,
+				CE87BA951BFD3E870001CB0E /* Frameworks */,
+				CE87BA941BFD3E870001CB0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE87BA941BFD3E870001CB0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE87BA931BFD3E870001CB0E /* SpotPhotos.app */,
+				CE87BAB71BFD3E870001CB0E /* SpotPhotosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE87BA951BFD3E870001CB0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE87BA961BFD3E870001CB0E /* Foundation.framework */,
+				CE87BA981BFD3E870001CB0E /* CoreGraphics.framework */,
+				CE87BA9A1BFD3E870001CB0E /* UIKit.framework */,
+				CE87BAB81BFD3E870001CB0E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE87BA9C1BFD3E870001CB0E /* SpotPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				CE87BAAB1BFD3E870001CB0E /* Main_iPad.storyboard */,
+				CE87BAA81BFD3E870001CB0E /* Main_iPhone.storyboard */,
+				CE87BACE1BFD3ECA0001CB0E /* Model */,
+				CE87BACF1BFD3ED10001CB0E /* View */,
+				CE87BAD01BFD3EDA0001CB0E /* Controller */,
+				CE87BAE51BFD4D0A0001CB0E /* FlickrFetcher */,
+				CE87BAA51BFD3E870001CB0E /* SpotPhotosAppDelegate.h */,
+				CE87BAA61BFD3E870001CB0E /* SpotPhotosAppDelegate.m */,
+				CE87BAB11BFD3E870001CB0E /* Images.xcassets */,
+				CE87BA9D1BFD3E870001CB0E /* Supporting Files */,
+			);
+			path = SpotPhotos;
+			sourceTree = "<group>";
+		};
+		CE87BA9D1BFD3E870001CB0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE87BA9E1BFD3E870001CB0E /* SpotPhotos-Info.plist */,
+				CE87BA9F1BFD3E870001CB0E /* InfoPlist.strings */,
+				CE87BAA21BFD3E870001CB0E /* main.m */,
+				CE87BAA41BFD3E870001CB0E /* SpotPhotos-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE87BABE1BFD3E870001CB0E /* SpotPhotosTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE87BAC41BFD3E870001CB0E /* SpotPhotosTests.m */,
+				CE87BABF1BFD3E870001CB0E /* Supporting Files */,
+			);
+			path = SpotPhotosTests;
+			sourceTree = "<group>";
+		};
+		CE87BABF1BFD3E870001CB0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE87BAC01BFD3E870001CB0E /* SpotPhotosTests-Info.plist */,
+				CE87BAC11BFD3E870001CB0E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE87BACE1BFD3ECA0001CB0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE87BAD71BFD477F0001CB0E /* Photo.h */,
+				CE87BAD81BFD477F0001CB0E /* Photo.m */,
+				CE0935F71C065FF100B85C91 /* Place.h */,
+				CE0935F81C065FF100B85C91 /* Place.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CE87BACF1BFD3ED10001CB0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CE87BAD01BFD3EDA0001CB0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE0935F41C06392D00B85C91 /* ImageViewController.m */,
+				CE0935F51C06392D00B85C91 /* ImageViewController.h */,
+				CE87BAD41BFD46A30001CB0E /* PlaceTableViewController.h */,
+				CE87BAD51BFD46A30001CB0E /* PlaceTableViewController.m */,
+				CE9C623D1C03E3BE00F03AE9 /* PhotoTableViewController.h */,
+				CE9C623E1C03E3BE00F03AE9 /* PhotoTableViewController.m */,
+				CE0936031C06693000B85C91 /* PlacePhotoViewController.h */,
+				CE0936041C06693000B85C91 /* PlacePhotoViewController.m */,
+				CE0936091C066A6300B85C91 /* RecentPhotoViewController.h */,
+				CE09360A1C066A6300B85C91 /* RecentPhotoViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CE87BAE51BFD4D0A0001CB0E /* FlickrFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				CE87BAE11BFD4D060001CB0E /* FlickrAPIKey.h */,
+				CE87BAE21BFD4D060001CB0E /* FlickrFetcher.m */,
+				CE87BAE31BFD4D060001CB0E /* FlickrFetcher.h */,
+			);
+			name = FlickrFetcher;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE87BA921BFD3E870001CB0E /* SpotPhotos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE87BAC81BFD3E870001CB0E /* Build configuration list for PBXNativeTarget "SpotPhotos" */;
+			buildPhases = (
+				CE87BA8F1BFD3E870001CB0E /* Sources */,
+				CE87BA901BFD3E870001CB0E /* Frameworks */,
+				CE87BA911BFD3E870001CB0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpotPhotos;
+			productName = SpotPhotos;
+			productReference = CE87BA931BFD3E870001CB0E /* SpotPhotos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE87BAB61BFD3E870001CB0E /* SpotPhotosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE87BACB1BFD3E870001CB0E /* Build configuration list for PBXNativeTarget "SpotPhotosTests" */;
+			buildPhases = (
+				CE87BAB31BFD3E870001CB0E /* Sources */,
+				CE87BAB41BFD3E870001CB0E /* Frameworks */,
+				CE87BAB51BFD3E870001CB0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE87BABD1BFD3E870001CB0E /* PBXTargetDependency */,
+			);
+			name = SpotPhotosTests;
+			productName = SpotPhotosTests;
+			productReference = CE87BAB71BFD3E870001CB0E /* SpotPhotosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE87BA8B1BFD3E870001CB0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SpotPhotos;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Lehman College";
+				TargetAttributes = {
+					CE87BAB61BFD3E870001CB0E = {
+						TestTargetID = CE87BA921BFD3E870001CB0E;
+					};
+				};
+			};
+			buildConfigurationList = CE87BA8E1BFD3E870001CB0E /* Build configuration list for PBXProject "SpotPhotos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE87BA8A1BFD3E870001CB0E;
+			productRefGroup = CE87BA941BFD3E870001CB0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE87BA921BFD3E870001CB0E /* SpotPhotos */,
+				CE87BAB61BFD3E870001CB0E /* SpotPhotosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE87BA911BFD3E870001CB0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE87BAAD1BFD3E870001CB0E /* Main_iPad.storyboard in Resources */,
+				CE87BAB21BFD3E870001CB0E /* Images.xcassets in Resources */,
+				CE87BAAA1BFD3E870001CB0E /* Main_iPhone.storyboard in Resources */,
+				CE87BAA11BFD3E870001CB0E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE87BAB51BFD3E870001CB0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE87BAC31BFD3E870001CB0E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE87BA8F1BFD3E870001CB0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE87BAD91BFD477F0001CB0E /* Photo.m in Sources */,
+				CE0935F61C06392E00B85C91 /* ImageViewController.m in Sources */,
+				CE87BAA31BFD3E870001CB0E /* main.m in Sources */,
+				CE87BAD61BFD46A30001CB0E /* PlaceTableViewController.m in Sources */,
+				CE9C623F1C03E3BE00F03AE9 /* PhotoTableViewController.m in Sources */,
+				CE87BAE41BFD4D060001CB0E /* FlickrFetcher.m in Sources */,
+				CE0936051C06693000B85C91 /* PlacePhotoViewController.m in Sources */,
+				CE87BAA71BFD3E870001CB0E /* SpotPhotosAppDelegate.m in Sources */,
+				CE09360B1C066A6300B85C91 /* RecentPhotoViewController.m in Sources */,
+				CE0935F91C065FF100B85C91 /* Place.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE87BAB31BFD3E870001CB0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE87BAC51BFD3E870001CB0E /* SpotPhotosTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE87BABD1BFD3E870001CB0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE87BA921BFD3E870001CB0E /* SpotPhotos */;
+			targetProxy = CE87BABC1BFD3E870001CB0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE87BA9F1BFD3E870001CB0E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE87BAA01BFD3E870001CB0E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE87BAA81BFD3E870001CB0E /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE87BAA91BFD3E870001CB0E /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		CE87BAAB1BFD3E870001CB0E /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE87BAAC1BFD3E870001CB0E /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		CE87BAC11BFD3E870001CB0E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE87BAC21BFD3E870001CB0E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE87BAC61BFD3E870001CB0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE87BAC71BFD3E870001CB0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE87BAC91BFD3E870001CB0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpotPhotos/SpotPhotos-Prefix.pch";
+				INFOPLIST_FILE = "SpotPhotos/SpotPhotos-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE87BACA1BFD3E870001CB0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpotPhotos/SpotPhotos-Prefix.pch";
+				INFOPLIST_FILE = "SpotPhotos/SpotPhotos-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CE87BACC1BFD3E870001CB0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpotPhotos.app/SpotPhotos";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpotPhotos/SpotPhotos-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SpotPhotosTests/SpotPhotosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CE87BACD1BFD3E870001CB0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpotPhotos.app/SpotPhotos";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpotPhotos/SpotPhotos-Prefix.pch";
+				INFOPLIST_FILE = "SpotPhotosTests/SpotPhotosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE87BA8E1BFD3E870001CB0E /* Build configuration list for PBXProject "SpotPhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE87BAC61BFD3E870001CB0E /* Debug */,
+				CE87BAC71BFD3E870001CB0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE87BAC81BFD3E870001CB0E /* Build configuration list for PBXNativeTarget "SpotPhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE87BAC91BFD3E870001CB0E /* Debug */,
+				CE87BACA1BFD3E870001CB0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE87BACB1BFD3E870001CB0E /* Build configuration list for PBXNativeTarget "SpotPhotosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE87BACC1BFD3E870001CB0E /* Debug */,
+				CE87BACD1BFD3E870001CB0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE87BA8B1BFD3E870001CB0E /* Project object */;
+}
