@@ -90,8 +90,6 @@
         NSDictionary *photo = self.photos[indexPath.row];
         
         [self prepareImageViewController:vc toDisplayPhoto:photo];
-        
-        [self savePhotoToRecent:sender];
     }
 }
 
@@ -100,6 +98,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id detail = self.splitViewController.viewControllers[1];
+    
+    [self savePhotoToRecent:indexPath];
     
     if ([detail isKindOfClass:[UINavigationController class]]) {
         detail = [((UINavigationController *)detail).viewControllers firstObject];
@@ -115,8 +115,7 @@
     vc.title = [photo valueForKey:FLICKR_PHOTO_TITLE];
 }
 
-- (void)savePhotoToRecent:(id)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+- (void)savePhotoToRecent:(NSIndexPath *)indexPath {
     
     NSDictionary *photo = self.photos[indexPath.row];
     
